@@ -43,6 +43,7 @@ class AuthController extends BaseController
         if ($adherent && password_verify($this->request->getPost('Motdepasse'), $adherent['Motdepasse'])) {
             
             session()->set([
+                'IdAdherents' => $adherent['IdAdherents'],
                 'Nom' => $adherent['Nom'],
                 'Prenom' => $adherent['Prenom'],
                 'AdresseMail' => $adherent['AdresseMail'],

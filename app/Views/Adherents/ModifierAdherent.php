@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Ajouter un utilisateur</title>
+  <title>Modifier un utilisateur</title>
 </head>
 <body>
 
   <h1>Modifier l'Adherent</h1>
 
- <form action="<?= base_url("/Adherents/update")?>" method="post">
+ <form action="<?= base_url("/modifier")?>" method="post">
 
     <input type="hidden" name="IdAdherents" value="<?= $Adherents['IdAdherents'] ?>">
 

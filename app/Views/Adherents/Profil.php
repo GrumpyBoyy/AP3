@@ -43,6 +43,7 @@
             <p><strong>Prénom :</strong> <?= session()->get('Prenom'); ?></p>
             <p><strong>Email :</strong> <?= session()->get('AdresseMail'); ?></p>
             <p><strong>Numéro de téléphone :</strong> <?= session()->get('NumeroTel'); ?></p>
+            <a href="/UpdateAdherent/<?= session()->get('IdAdherents'); ?>" class="btn btn-primary w-100">Modifier mes informations</a>
         </div>  
     </div>
 </div>

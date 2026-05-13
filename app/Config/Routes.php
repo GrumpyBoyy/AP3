@@ -10,6 +10,8 @@ $routes->get('/home', 'Home::home');
 $routes->get('/tarifs', 'Home::tarifs');
 $routes->get('/calendrier', 'Home::calendrier');
 $routes->get('/contact', 'Home::contact' , ['filter' => 'login']);
+$routes->get('/UpdateAdherent/(:num)', 'AdherentsController::modifier/$1');
+$routes->post('/modifier', 'AdherentsController::update');
 
 $routes->group('Adherents', ['filter' => 'login:1'], function($routes) { 
     $routes->get('/', 'AdherentsController::Liste');

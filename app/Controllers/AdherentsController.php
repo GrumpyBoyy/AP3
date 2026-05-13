@@ -55,11 +55,12 @@ class AdherentsController extends BaseController
         $model = new AdherentsModel();
         $adherent = $model->find($id);
         if(!$adherent){
-            return redirect()->to('/Adherents');
+            return redirect()->to('/Home');
         }
         return view('Adherents/ModifierAdherent', ['Adherents' => $adherent]);
     }
 
+    
     public function update() {
             $model = new AdherentsModel();
             $id = $this->request->getPost('IdAdherents');
@@ -77,8 +78,18 @@ class AdherentsController extends BaseController
                 'idAbonnement' => $this->request->getPost('idAbonnement'),
             ];
 
+           
+
         $model->update($id, $data);
-        return redirect()->to('/Adherents');
+
+         session()->set([
+                'Nom' => $data['Nom'],
+                'Prenom' => $data['Prenom'],
+                'AdresseMail' => $data['AdresseMail'],
+                'NumeroTel' => $data['NumeroTel'],
+                'LoginId' => true,
+            ]);
+        return redirect()->to('/home');
 
     }
 
